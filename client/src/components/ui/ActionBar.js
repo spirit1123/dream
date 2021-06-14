@@ -1,11 +1,12 @@
 import React, { Component } from "react";
+import './ActionBar.css';
 
 export class ActionBar extends Component {
 
     render() {
         return (
-            <div>
-                <p>Lalilu</p>
+            <div className="actionBar">
+                <div>Lalilu</div>
             </div>
         )
     }
