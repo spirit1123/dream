@@ -1,13 +1,13 @@
+import { Component } from 'react';
 import './App.css';
-import {World} from './components/game/World'
+import { World } from './components/game/World';
 
-function App() {
-  return (
-    <div className="App">
-      <p>Test</p>
-      <World></World>
-    </div>
-  );
+export class App extends Component {
+  render() {
+    return (
+      <div className="App">
+        <World></World>
+      </div>
+    );
+  }
 }
-
-export default App;
