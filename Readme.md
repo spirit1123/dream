@@ -15,7 +15,7 @@ In conclusion:
   - Database for storing the state of the game will be a mix of different ones, depending on the usecase
   - Chat will be stored in some form of graph database (nope, no experience there so far)
   - NoSQL Database will be used for items players and everything else (exp with MongoDB)
-- Frontend will be written in React (some exp), ThreeJS (no exp) wrapped in electron (some exp) to eliminate browser variations.
+- Frontend will be written in React (some exp), ThreeJS (no exp) wrapped in tauri (no exp) to eliminate browser variations.
   - This will be subject to a major revamp ... but for now: it's good enough, since I'm no artist, and rendering blocks is all we need at first.
 
 # How to setup
