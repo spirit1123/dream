@@ -114,7 +114,7 @@ export class BasicCharacterController {
             acc.multiplyScalar(2.0);
         }
 
-        if (this._stateMachine._currentState.Name == 'dance') {
+        if (this._stateMachine._currentState.Name === 'dance') {
             acc.multiplyScalar(0.0);
         }
 
@@ -200,6 +200,9 @@ export class BasicCharacterControllerInput {
             case 16: // SHIFT
                 this._keys.shift = true;
                 break;
+            default:
+                // nothing we know
+                break;
         }
     }
 
@@ -223,6 +226,9 @@ export class BasicCharacterControllerInput {
             case 16: // SHIFT
                 this._keys.shift = false;
                 break;
+            default:
+                // nothing we know
+                break;
         }
     }
 };
@@ -242,7 +248,7 @@ export class FiniteStateMachine {
         const prevState = this._currentState;
 
         if (prevState) {
-            if (prevState.Name == name) {
+            if (prevState.Name === name) {
                 return;
             }
             prevState.Exit();
@@ -341,9 +347,9 @@ export class DanceState extends State {
 
 
 export class WalkState extends State {
-    constructor(parent) {
-        super(parent);
-    }
+    // constructor(parent) {
+    //     super(parent);
+    // }
 
     get Name() {
         return 'walk';
@@ -356,7 +362,7 @@ export class WalkState extends State {
 
             curAction.enabled = true;
 
-            if (prevState.Name == 'run') {
+            if (prevState.Name === 'run') {
                 const ratio = curAction.getClip().duration / prevAction.getClip().duration;
                 curAction.time = prevAction.time * ratio;
             } else {
@@ -389,9 +395,9 @@ export class WalkState extends State {
 
 
 export class RunState extends State {
-    constructor(parent) {
-        super(parent);
-    }
+    // constructor(parent) {
+    //     super(parent);
+    // }
 
     get Name() {
         return 'run';
@@ -404,7 +410,7 @@ export class RunState extends State {
 
             curAction.enabled = true;
 
-            if (prevState.Name == 'walk') {
+            if (prevState.Name === 'walk') {
                 const ratio = curAction.getClip().duration / prevAction.getClip().duration;
                 curAction.time = prevAction.time * ratio;
             } else {
@@ -437,9 +443,9 @@ export class RunState extends State {
 
 
 export class IdleState extends State {
-    constructor(parent) {
-        super(parent);
-    }
+    // constructor(parent) {
+    //     super(parent);
+    // }
 
     get Name() {
         return 'idle';

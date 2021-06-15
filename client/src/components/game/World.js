@@ -1,5 +1,5 @@
 import React, { Component } from "react";
-import { CharacterControllerDemo, ThirdPersonCameraDemo } from "./elements/CharacterController";
+import { ThirdPersonCameraDemo } from "./elements/CharacterController";
 
 export class World extends Component {
   componentDidMount() {
@@ -23,6 +23,7 @@ export class World extends Component {
     // animate();
     // === THREE.JS EXAMPLE CODE END ===
     let _APP = new ThirdPersonCameraDemo();
+    console.log(_APP)
   }
   render() {
     return (
